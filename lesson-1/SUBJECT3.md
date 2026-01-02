@@ -17,7 +17,24 @@ Add shipping carriers with delivery delays, managed via Django admin, and displa
 
 ## Tasks
 
-### Task 1: Backend - Create Carrier Model
+### Task 1: Frontend - Mark Feature in API
+
+**File to modify:** `frontend/src/api/products.ts`
+
+Add a feature marker at the top of the file:
+
+```diff
++// Feature: Shipping Carriers
++export const API_VERSION = "2.0-shipping";
++
+ export interface Product {
+```
+
+**Git:** Commit your changes
+
+---
+
+### Task 2: Backend - Create Carrier Model
 
 **File to modify:** `backend/core/api/models.py`
 
@@ -40,7 +57,7 @@ Add a `Carrier` model with name and delivery delay:
 
 ---
 
-### Task 2: Backend - Register in Django Admin
+### Task 3: Backend - Register in Django Admin
 
 **File to modify:** `backend/core/api/admin.py`
 
@@ -59,7 +76,7 @@ Add a `Carrier` model with name and delivery delay:
 
 ---
 
-### Task 3: Backend - Run Database Migration
+### Task 4: Backend - Run Database Migration
 
 Create and apply the migration:
 
@@ -73,7 +90,7 @@ uv run python manage.py migrate
 
 ---
 
-### Task 4: Backend - Add Carriers API Endpoint
+### Task 5: Backend - Add Carriers API Endpoint
 
 **File to modify:** `backend/core/api/urls.py`
 
@@ -113,7 +130,7 @@ uv run python manage.py migrate
 
 ---
 
-### Task 5: Backend - Create Carriers via Admin
+### Task 6: Backend - Create Carriers via Admin
 
 1. Go to http://localhost:8000/admin/
 2. Login with your superuser account
@@ -124,7 +141,7 @@ uv run python manage.py migrate
 
 ---
 
-### Task 6: Frontend - Create Carrier Type and API
+### Task 7: Frontend - Create Carrier Type and API
 
 **File to create:** `frontend/src/api/carriers.ts`
 
@@ -145,7 +162,7 @@ export async function fetchCarriers(): Promise<Carrier[]> {
 
 ---
 
-### Task 7: Frontend - Create ShippingSection Component
+### Task 8: Frontend - Create ShippingSection Component
 
 **File to create:** `frontend/src/components/ShippingSection.tsx`
 
@@ -184,7 +201,7 @@ export default function ShippingSection() {
 
 ---
 
-### Task 8: Frontend - Add ShippingSection to App.tsx
+### Task 9: Frontend - Add ShippingSection to App.tsx
 
 **File to modify:** `frontend/src/App.tsx`
 
@@ -221,6 +238,7 @@ Add the section after the hero, at the start of main:
 ## Checklist
 
 - [ ] Created feature branch from `main`
+- [ ] Added feature marker in `products.ts`
 - [ ] Added `Carrier` model
 - [ ] Registered Carrier in Django admin
 - [ ] Created and applied migration

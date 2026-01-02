@@ -17,7 +17,24 @@ Add site settings managed via Django admin, starting with an "orders enabled" to
 
 ## Tasks
 
-### Task 1: Backend - Create SiteSettings Model
+### Task 1: Frontend - Mark Feature in API
+
+**File to modify:** `frontend/src/api/products.ts`
+
+Add a feature marker at the top of the file:
+
+```diff
++// Feature: Site Settings
++export const API_VERSION = "2.0-settings";
++
+ export interface Product {
+```
+
+**Git:** Commit your changes
+
+---
+
+### Task 2: Backend - Create SiteSettings Model
 
 **File to modify:** `backend/core/api/models.py`
 
@@ -42,7 +59,7 @@ Add a `SiteSettings` model with an `orders_enabled` field:
 
 ---
 
-### Task 2: Backend - Register in Django Admin
+### Task 3: Backend - Register in Django Admin
 
 **File to modify:** `backend/core/api/admin.py`
 
@@ -61,7 +78,7 @@ Add a `SiteSettings` model with an `orders_enabled` field:
 
 ---
 
-### Task 3: Backend - Create and Modify Migration
+### Task 4: Backend - Create and Modify Migration
 
 Create the migration:
 
@@ -104,7 +121,7 @@ uv run python manage.py migrate
 
 ---
 
-### Task 4: Backend - Add Settings API Endpoint
+### Task 5: Backend - Add Settings API Endpoint
 
 **File to modify:** `backend/core/api/urls.py`
 
@@ -142,7 +159,7 @@ uv run python manage.py migrate
 
 ---
 
-### Task 5: Frontend - Create Settings Type and API
+### Task 6: Frontend - Create Settings Type and API
 
 **File to create:** `frontend/src/api/settings.ts`
 
@@ -161,7 +178,7 @@ export async function fetchSettings(): Promise<SiteSettings> {
 
 ---
 
-### Task 6: Frontend - Create OrdersDisabledBanner Component
+### Task 7: Frontend - Create OrdersDisabledBanner Component
 
 **File to create:** `frontend/src/components/OrdersDisabledBanner.tsx`
 
@@ -190,7 +207,7 @@ export default function OrdersDisabledBanner() {
 
 ---
 
-### Task 7: Frontend - Add Banner to App.tsx
+### Task 8: Frontend - Add Banner to App.tsx
 
 **File to modify:** `frontend/src/App.tsx`
 
@@ -227,6 +244,7 @@ Add the banner at the start of main:
 ## Checklist
 
 - [ ] Created feature branch from `main`
+- [ ] Added feature marker in `products.ts`
 - [ ] Added `SiteSettings` model
 - [ ] Registered SiteSettings in Django admin
 - [ ] Created migration with default data (orders disabled)

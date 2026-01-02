@@ -17,7 +17,24 @@ Add basic analytics tracking to count product views, store them in the database,
 
 ## Tasks
 
-### Task 1: Backend - Create ProductView Model
+### Task 1: Frontend - Mark Feature in API
+
+**File to modify:** `frontend/src/api/products.ts`
+
+Add a feature marker at the top of the file:
+
+```diff
++// Feature: Analytics
++export const API_VERSION = "2.0-analytics";
++
+ export interface Product {
+```
+
+**Git:** Commit your changes
+
+---
+
+### Task 2: Backend - Create ProductView Model
 
 **File to modify:** `backend/core/api/models.py`
 
@@ -40,7 +57,7 @@ Add a `ProductView` model to track views per product:
 
 ---
 
-### Task 2: Backend - Register in Django Admin
+### Task 3: Backend - Register in Django Admin
 
 **File to modify:** `backend/core/api/admin.py`
 
@@ -60,7 +77,7 @@ Add a `ProductView` model to track views per product:
 
 ---
 
-### Task 3: Backend - Create Migration
+### Task 4: Backend - Create Migration
 
 Run the migration command:
 
@@ -74,7 +91,7 @@ uv run python manage.py migrate
 
 ---
 
-### Task 4: Backend - Add Analytics API Endpoints
+### Task 5: Backend - Add Analytics API Endpoints
 
 **File to modify:** `backend/core/api/urls.py`
 
@@ -126,7 +143,7 @@ Add endpoints to record views and get analytics:
 
 ---
 
-### Task 5: Frontend - Create Analytics API Functions
+### Task 6: Frontend - Create Analytics API Functions
 
 **File to create:** `frontend/src/api/analytics.ts`
 
@@ -153,7 +170,7 @@ export async function recordProductView(productId: number): Promise<void> {
 
 ---
 
-### Task 6: Frontend - Create Analytics Page Component
+### Task 7: Frontend - Create Analytics Page Component
 
 **File to create:** `frontend/src/pages/AnalyticsPage.tsx`
 
@@ -200,7 +217,7 @@ export default function AnalyticsPage() {
 
 ---
 
-### Task 7: Frontend - Add Analytics Route
+### Task 8: Frontend - Add Analytics Route
 
 **File to modify:** `frontend/src/App.tsx`
 
@@ -227,7 +244,7 @@ Add a route for the analytics page:
 
 ---
 
-### Task 8: Frontend - Record Views on Product Click
+### Task 9: Frontend - Record Views on Product Click
 
 **File to modify:** `frontend/src/pages/HomePage.tsx`
 
@@ -269,6 +286,7 @@ Update the product card to be clickable:
 ## Checklist
 
 - [ ] Created feature branch from `main`
+- [ ] Added feature marker in `products.ts`
 - [ ] Added `ProductView` model
 - [ ] Registered ProductView in Django admin
 - [ ] Created and applied migration
