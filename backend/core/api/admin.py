@@ -4,6 +4,6 @@ from .models import Product, Carrier
 
 admin.site.register(Product)
 
-admin.register(Carrier)
+admin.site.register(Carrier)
 class CarrierAdmin(admin.ModelAdmin):
     list_display = ('name', 'delay_days')
