@@ -61,4 +61,5 @@ jobs:
         with:
           context: ./frontend
           file: ./frontend/Dockerfile
+          tags: ${{ steps.meta.outputs.tags }}
           push: true
