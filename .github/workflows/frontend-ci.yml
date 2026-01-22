@@ -15,6 +15,21 @@ jobs:
   quality:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      packages: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: frontend
+            context: ./frontend
+            image_suffix: frontend
+          - service: backend
+            context: ./backend
+            image_suffix: backend
+
     defaults:
       run:
         working-directory: frontend
