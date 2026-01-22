@@ -53,7 +53,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ env.REGISTRY }}/boutique-frontend
+          images: ${{ env.REGISTRY }}/ThomasMo54/boutique-frontend
 
       - name: Build and push Docker image
         id: push
