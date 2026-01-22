@@ -53,7 +53,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ env.REGISTRY }}/{{ github.repository }}
+          images: ${{ env.REGISTRY }}/${{ github.repository }}-${{ matrix.image_suffix }}
 
       - name: Build and push Docker image
         id: push
