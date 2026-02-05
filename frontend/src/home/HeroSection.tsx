@@ -8,7 +8,7 @@ export default function HeroSection() {
     <header className="mb-12 grid grid-cols-2 items-center h-screen">
       <div className="text-center space-y-8">
         <h1 className="text-4xl font-bold text-gray-800">Boutique Couture</h1>
-        <p>Boutique premium de textile pour bébé 😎</p>
+        <p>Boutique premium de textile pour bébé (test) 😎</p>
         <a
           href="#main"
           className="inline-block bg-gray-800 text-white px-6 py-3 rounded-md shadow-md hover:bg-gray-700 transition text-center h-12 w-60"
