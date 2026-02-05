@@ -115,6 +115,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.TOKEN }}
-            docker pull ${{ env.REGISTRY }}/teaching-shop-example-backend::main
-            docker pull ${{ env.REGISTRY }}/teaching-shop-example-frontend:main
+            docker pull ${{ env.REGISTRY }}/thomasmo54/teaching-shop-example-backend::main
+            docker pull ${{ env.REGISTRY }}/thomasmo54/teaching-shop-example-frontend:main
             docker compose up -d --force-recreate
